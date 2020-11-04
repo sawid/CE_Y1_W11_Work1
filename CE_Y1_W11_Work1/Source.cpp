@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-void checkLetter(char);
+void checkLetter(char,int*,int*);
 
 int main() {
 	char str[1000];
@@ -13,17 +13,17 @@ int main() {
 		checkLetter(str[i],&upper,&lower);
 		i++;
 	}
-	printf("%d %d", upper, lower);
+	printf("Capital letter = %d\nLower-case letter = %d", upper, lower);
 }
 
 void checkLetter(char str,int* upper,int* lower) {
 	if (str >= 'A' && str <= 'Z')
 	{
-		upper++;
+		++*upper;
 	}
 	else if (str >= 'a' && str <= 'z')
 	{
-		lower++;
+		++*lower;
 	}
 }
 
